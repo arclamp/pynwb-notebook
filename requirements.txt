@@ -1,0 +1,7 @@
+allensdk==0.14.3
+ipywidgets==7.0.5
+jupyter==1.0.0
+pandas==0.19.2
+pynwb==0.2.0
+traitlets==4.3.2
+widgetsnbextension==3.0.8
