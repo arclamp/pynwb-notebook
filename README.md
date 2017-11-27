@@ -12,4 +12,6 @@ PyNWB notebook technology experiments
 4. Enable the Jupyter Widgets extension: `jupyter nbextension enable --py
    weidgetsnbextension`.
 
+5. Install the Node dependencies: `npm install`.
+
 5. Launch a Jupyter notebook session: `jupyter notebook`.
