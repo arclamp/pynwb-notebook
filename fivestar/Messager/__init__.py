@@ -1,5 +1,8 @@
+from IPython.core.magics.display import Javascript
 import ipywidgets as widgets
 from traitlets import Unicode, validate
+
+from ..common import makePath
 
 
 class Messager(widgets.DOMWidget):
@@ -11,6 +14,11 @@ class Messager(widgets.DOMWidget):
 
     def __init__(self, initial_message=None):
         super(Messager, self).__init__()
+
+        with open(makePath('Messager', 'widget.js')) as f:
+            js = f.read()
+
+        display(Javascript(js))
 
         if initial_message is not None:
             self.message = initial_message
