@@ -3,6 +3,7 @@ import ipywidgets as widgets
 from traitlets import Unicode, validate
 
 from ..common import makePath
+from ..common import to_json
 
 _name = 'CandelaLineChart'
 
@@ -17,5 +18,4 @@ class CandelaLineChart(widgets.DOMWidget):
         with open(makePath('CandelaLineChart', 'widget.js')) as f:
             js = f.read()
 
-        display(Javascript(js))
-
+        display(Javascript(js % (to_json(kwargs))))

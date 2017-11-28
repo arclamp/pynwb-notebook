@@ -5,23 +5,11 @@ require.config({
 });
 
 define('CandelaLineChart', ['@jupyter-widgets/base', 'candela'], function (widgets, candela) {
-  console.log('candela', candela);
+  var options = JSON.parse('%s');
 
   var CandelaLineChart = widgets.DOMWidgetView.extend({
     initialize: function () {
-      var data = [];
-      for (var i = -5; i < 5; i += 0.1) {
-        data.push({
-          x: i,
-          y: i * i - 2
-        });
-      }
-
-      this.vis = new candela.components.LineChart(this.el, {
-        data: data,
-        x: 'x',
-        y: 'y'
-      });
+      this.vis = new candela.components.LineChart(this.el, options);
     },
 
     render: function () {
