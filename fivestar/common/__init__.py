@@ -9,11 +9,11 @@ def makePath(*pathcomp):
     return os.path.join(_curdir, *pathcomp)
 
 
-def load(path):
+def load(path, name=''):
     global _loader
 
     if _loader is None:
         with open(makePath('common', 'load.js')) as f:
             _loader = f.read()
 
-    display(Javascript(_loader % (path)))
+    display(Javascript(_loader % (path, name)))
