@@ -14,9 +14,12 @@
 
   require.undef(name);
 
+  element.text('Loading...');
+
   require([name], function (lib) {
-    console.log('module loaded from path ' + path);
+    element.html('Module loaded');
   }, function (error) {
+    element.html('<span style="color:red;">ERROR! see console for details</span>');
     throw error;
   });
 }());
